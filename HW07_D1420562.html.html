@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="走進臺中文學館，認識日治時期警察宿舍群歷史、老榕樹景觀與文學公園，透過景點清單、有框表格、照片、影片與 Google 地圖閱讀城市故事。">
+    <meta name="author" content="蘇芯怡">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="zh_TW">
+    <meta property="og:title" content="臺中文學館報導｜日式宿舍群與文學公園">
+    <meta property="og:description" content="認識臺中文學館的歷史背景、日式建築與老榕樹，搭配景點表格、照片、影片及位置地圖。">
+    <meta property="og:image" content="https://beri.tw/wp-content/uploads/2024/10/Taichung-Literature-Pavilion-11.jpg">
+    <meta property="og:image:alt" content="臺中文學館日式建築與綠意公園">
+    <meta property="article:published_time" content="2026-10-07">
+    <meta property="article:modified_time" content="2026-10-21">
+    <title>臺中文學館報導｜HW06 CSS 樣式練習</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 32px 24px;
+            font-family: "Microsoft JhengHei", "PingFang TC", sans-serif;
+            font-size: 17px;
+            line-height: 1.85;
+            color: #2c3831;
+            background-color: #f5f4f0;
+        }
+        header {
+            padding: 34px 36px;
+            background-color: #3d4a41;
+            color: #f9f8f3;
+            border-top: 6px solid #b89b72;
+            border-radius: 6px;
+        }
+        h1 {
+            margin: 0 0 16px;
+            font-size: 2rem;
+            line-height: 1.4;
+            letter-spacing: 0.04em;
+        }
+        header p {
+            margin: 10px 0;
+        }
+        small {
+            font-size: 0.85em;
+            font-style: normal;
+        }
+        nav {
+            margin: 24px 0;
+            padding: 20px 24px;
+            background-color: #e8e6df;
+            border: 1px solid #d1cdcf;
+            border-radius: 6px;
+        }
+        nav h2 {
+            margin-top: 0;
+            padding: 0;
+            border: 0;
+            font-size: 1.1rem;
+        }
+        nav ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        nav li {
+            display: inline-block;
+            margin: 4px 6px 4px 0;
+        }
+        nav a {
+            display: inline-block;
+            padding: 6px 12px;
+            background-color: #fffdf8;
+            border: 1px solid #c9c5bc;
+            border-radius: 4px;
+            text-decoration: none;
+        }
+        a {
+            color: #3b5c4a;
+            text-underline-offset: 4px;
+            overflow-wrap: anywhere;
+        }
+        a:hover {
+            color: #8c6838;
+            text-decoration: underline;
+        }
+        a:focus-visible, summary:focus-visible {
+            outline: 3px solid #b89b72;
+            outline-offset: 4px;
+        }
+        section, aside {
+            margin: 24px 0;
+            padding: 24px 28px;
+            background-color: #fffdf8;
+            border: 1px solid #dcd8cf;
+            border-radius: 6px;
+        }
+        h2 {
+            margin: 0 0 18px;
+            padding-left: 12px;
+            border-left: 4px solid #4f6657;
+            font-size: 1.4rem;
+            line-height: 1.5;
+        }
+        h3 {
+            margin: 22px 0 10px;
+            font-size: 1.1rem;
+        }
+        p {
+            margin: 12px 0;
+        }
+        ul, ol {
+            padding-left: 1.6em;
+        }
+        li {
+            margin: 8px 0;
+        }
+        hr {
+            margin: 26px 0;
+            border: 0;
+            border-top: 1px solid #d1cdcf;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95em;
+            overflow-wrap: anywhere;
+        }
+        caption {
+            margin-bottom: 12px;
+            text-align: left;
+            font-weight: bold;
+        }
+        th, td {
+            padding: 12px;
+            border: 1px solid #c4c0b5;
+            text-align: left;
+            vertical-align: top;
+        }
+        thead {
+            background-color: #e5e2d8;
+        }
+        tbody th {
+            background-color: #f0ede4;
+        }
+        figure {
+            margin: 18px 0;
+        }
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+        figcaption {
+            margin-top: 10px;
+            color: #58665c;
+            font-size: 0.85em;
+        }
+        iframe {
+            display: block;
+            max-width: 100%;
+            border: 0;
+            border-radius: 4px;
+        }
+        .video-frame {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 16 / 9;
+        }
+        .map-frame {
+            width: 100%;
+            height: 340px;
+        }
+        #tips {
+            background-color: #eeeada;
+            border-left: 5px solid #9e8e60;
+        }
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+        }
+        footer {
+            margin-top: 32px;
+            padding: 20px 0;
+            border-top: 2px solid #4f6657;
+            color: #58665c;
+            text-align: center;
+        }
+        @media (max-width: 600px) {
+            body {
+                padding: 16px 12px;
+                font-size: 16px;
+            }
+            header, nav, section, aside {
+                padding: 20px 16px;
+            }
+            h1 {
+                font-size: 1.65rem;
+            }
+            h2 {
+                font-size: 1.2rem;
+            }
+            th, td {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="top">
+        <h1>臺中文學館：城市裡的文學綠洲</h1>
+        <p><small>城市走讀 · 歷史建築 · 質感散步</small></p>
+        <p><strong>從日式警察宿舍到大榕樹景觀，一起感受文學與建築交織的時光。</strong></p>
+        <p>本期焦點：<mark style="background-color: #f3e6c8; color: #423521; padding: 2px 6px;">歷史建築與日式庭園</mark>，從館舍報導延伸到周邊地圖。</p>
+        <p>作者：蘇芯怡｜報導整理日期：<time datetime="2026-10-21">2026 年 10 月 21 日</time></p>
+        <p><small style="font-style: italic;">本文為資料整理型教學報導，非現場採訪紀錄。</small></p>
+    </header>
+
+    <nav aria-label="報導目錄">
+        <h2>報導目錄</h2>
+        <ul>
+            <li><a href="#intro">館舍簡介</a></li>
+            <li><a href="#highlights">景點特色與散步順序</a></li>
+            <li><a href="#table">館舍展區比較表</a></li>
+            <li><a href="#photo">文學館景點照片</a></li>
+            <li><a href="#video">影音報導</a></li>
+            <li><a href="#map">位置地圖</a></li>
+            <li><a href="#tips">走讀小提醒</a></li>
+            <li><a href="#sources">資料來源</a></li>
+        </ul>
+    </nav>
+
+    <hr>
+
+    <main id="main-content">
+        <article aria-label="臺中文學館專題報導">
+            <section id="intro">
+                <h2>一、館舍簡介</h2>
+                <p>
+                    臺中文學館位於台中市西區樂群街，原為 <strong>1938 年完工</strong>的日治時期警察宿舍群。
+                    經臺中市政府文化局修復後，於 2016 年正式開館，
+                    劃設為兼具展示、教育與休憩功能的文學公園。
+                </p>
+                <p>
+                    園內包含常設展區、主題展區與兒童文學館等多棟木造日式建築，
+                    充滿濃厚的歷史風情與人文氣息。
+                    中心區域的一株百年大榕樹，氣根盤根錯節，成為園內極具識別度的自然景觀。
+                </p>
+                <p>
+                    從日式木造建築的構造細節到文學作品的展示，臺中文學館就像一本立體的城市文學書。
+                    本篇以展區整理與建議散步順序，帶領大家走入這座靜謐的文化綠洲。
+                </p>
+                <p>館舍地址：臺中市西區樂群街 38 號。<br>閱讀重點：歷史建築、文學展覽、大榕樹與週邊第五市場美食。</p>
+            </section>
+
+            <hr>
+
+            <section id="highlights">
+                <h2>二、景點特色與散步順序</h2>
+                <h3>值得留意的三個特色</h3>
+                <ul>
+                    <li><strong>日式宿舍群建築：</strong>保存完整的檜木木造結構與黑瓦屋頂。</li>
+                    <li><strong>百年大榕樹：</strong>氣根如瀑布般傾瀉，形成獨特的視覺景觀與綠蔭。</li>
+                    <li><strong>文學與生活結合：</strong>展區介紹臺中在地作家手稿，並定期舉辦文化講座。</li>
+                </ul>
+
+                <h3>建議散步順序</h3>
+                <p style="border-left: 4px solid #b89b72; padding-left: 14px;">以下是本報導規劃的散步建議，並非官方指定路線。</p>
+                <ol>
+                    <li>從樂群街入口進入，先觀察日式警察宿舍群的外觀與木構造。</li>
+                    <li>前往園區中央的百年大榕樹下，欣賞氣根盤繞與光影變化。</li>
+                    <li>進入常設展覽館，觀賞臺中文學歷史與在地作家的手稿展示。</li>
+                    <li>沿著文學公園步道漫步，最後可串聯鄰近的第五市場品嚐在地小吃。</li>
+                </ol>
+            </section>
+
+            <hr>
+
+            <section id="table">
+                <h2>三、館舍展區比較表</h2>
+                <table>
+                    <caption>臺中文學館三處亮點展區的特色與建議參觀時間</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">展區 / 亮點名稱</th>
+                            <th scope="col">主要特色</th>
+                            <th scope="col">建議參觀時間</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">常設展覽館</th>
+                            <td>展示臺中在地作家手稿與文學發展脈絡</td>
+                            <td>約 30 - 40 分鐘</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">兒童文學館</th>
+                            <td>提供親子互動閱讀空間與繪本體驗區</td>
+                            <td>約 20 - 30 分鐘</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">文學公園與大榕樹</th>
+                            <td>氣根盤根錯節的壯觀百年榕樹與曲徑綠地</td>
+                            <td>約 20 分鐘（戶外自由參觀）</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <hr>
+
+            <section id="photo">
+                <h2>四、文學館景點照片</h2>
+                <figure>
+                    <img
+                        src="https://beri.tw/wp-content/uploads/2024/10/Taichung-Literature-Pavilion-11.jpg"
+                        alt="臺中文學館日式建築與綠意公園"
+                        width="480">
+                    <figcaption>
+                        臺中文學館充滿古樸質感的日式木造宿舍群建築與庭園景觀。
+                        圖片來源：<a href="https://beri.tw/" target="_blank" rel="noopener noreferrer">Berry's Notes</a>。
+                    </figcaption>
+                </figure>
+            </section>
+
+            <hr>
+
+            <section id="video">
+                <h2>五、影音報導</h2>
+                <p>透過下方影片認識臺中文學館與日式宿舍群，再對照影片畫面與本文介紹的景點。</p>
+                <figure>
+                    <iframe
+                        class="video-frame"
+                        width="560"
+                        height="315"
+                        src="https://www.youtube.com/embed/zM7RAnP9Y6I"
+                        title="臺中文學館介紹影片"
+                        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen>
+                    </iframe>
+                    <figcaption>影片：漫遊臺中文學館，日式建築與都市綠洲小旅行。</figcaption>
+                </figure>
+                <p><a href="https://www.youtube.com/watch?v=zM7RAnP9Y6I" target="_blank" rel="noopener noreferrer">在 YouTube 觀看臺中文學館介紹（另開分頁）</a></p>
+                <p><small>影片為外部作者發布的景點介紹，現場狀況請以最新官方資訊為準。</small></p>
+                <p><small>本機預覽請使用同資料夾的 <code>HW06_開啟預覽.command</code> 或 Live Server；若直接開啟 HTML 出現錯誤 153，請改用 HTTP 預覽或上方 YouTube 連結。</small></p>
+            </section>
+
+            <section id="map">
+                <h2>六、位置地圖：找到臺中文學館</h2>
+                <p>臺中文學館位於臺中市西區，地址為<strong>樂群街 38 號</strong>。
+                    下方地圖標示本文介紹的館舍位置，方便讀者對照景點與周邊第五市場街道。</p>
+                <iframe
+                    class="map-frame"
+                    src="https://maps.google.com/maps?q=24.1398242,120.6725832&amp;z=16&amp;output=embed"
+                    width="480"
+                    height="360"
+                    title="臺中文學館位置 Google 地圖"
+                    loading="lazy"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen>
+                </iframe>
+                <p><a href="https://www.google.com/maps/search/?api=1&amp;query=%E8%87%BA%E4%B8%AD%E5%A2%83%E5%AD%B8%E9%A4%A8" target="_blank" rel="noopener noreferrer">在 Google 地圖開啟臺中文學館（另開分頁）</a></p>
+                <p><small>位置查詢由 Google 地圖提供；抵達後請依現場導覽牌確認展館入口與參觀時間。</small></p>
+            </section>
+
+            <hr>
+
+            <aside id="tips" aria-labelledby="tips-title">
+                <h2 id="tips-title">走讀小提醒</h2>
+                <details open>
+                    <summary>參觀前與走讀時，記得這三件事</summary>
+                    <ul>
+                        <li><strong>開放時間：</strong>館舍展示館為 09:00 – 17:00（週一及國定假日休館）；戶外文學公園為全天開放。</li>
+                        <li><strong>攝影規範：</strong>室內展館拍攝請留意現場規定，請勿開啟閃光燈並遵守禁止錄影區域規範。</li>
+                        <li><strong>環境維護：</strong>日式建築多為木造結構，請放慢腳步並共同愛護古蹟與自然景觀。</li>
+                    </ul>
+                </details>
+            </aside>
+
+            <hr>
+
+            <section id="sources">
+                <h2>七、資料來源</h2>
+                <p>本報導依下列資料整理，散步順序與觀察建議由示範作者規劃。</p>
+                <ul>
+                    <li><a href="https://www.tlm.taichung.gov.tw/" target="_blank" rel="noopener noreferrer">臺中文學館官方網站</a></li>
+                    <li><a href="https://www.taichung.gov.tw/" target="_blank" rel="noopener noreferrer">臺中市政府觀光旅遊局：臺中文學館介紹</a></li>
+                    <li><a href="https://www.youtube.com/results?search_query=%E8%87%BA%E4%B8%AD%E5%A2%83%E5%AD%B8%E9%A4%A8" target="_blank" rel="noopener noreferrer">YouTube：臺中文學館相關介紹影片</a></li>
+                </ul>
+                <p><small>資料整理日期：2026 年 10 月 21 日。</small></p>
+            </section>
+        </article>
+    </main>
+
+    <hr>
+
+    <footer>
+        <p><strong>第六次 HTML 與 CSS 作業範例｜臺中文學館報導</strong></p>
+        <p><small>作者：蘇芯怡 · 更新日期：2026 年 10 月 21 日</small></p>
+        <p><small>CSS 教學參考：<a href="https://steam.oxxostudio.tw/category/css/info/how-to-use.html" target="_blank" rel="noopener noreferrer">STEAM：開始使用 CSS（方法一、方法二）</a>。</small></p>
+        <p><small>文字依來源整理；照片與影片權利屬原作者。本文為課堂示範。</small></p>
+        <p><a href="#top">回到頁首</a></p>
+    </footer>
+</body>
+</html>
